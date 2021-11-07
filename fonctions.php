@@ -76,7 +76,6 @@ function rechercher($mot)
                 }
             }
             $i=$i+1;
-
         }while ($motc != "-FIN-");
     }
 
@@ -86,9 +85,9 @@ function rechercher($mot)
 
 
 /*
-.--------------.
-| generePhrase |
-'--------------'
+.--------.
+| genere |
+'--------'
 Renvoit une phrase généré aléatoirement.
 */
 
@@ -96,8 +95,14 @@ Renvoit une phrase généré aléatoirement.
 function genere(){
 	$phrase="";
 
+	$i=0;
+
 	$mot=".";
     do{
+
+    	$i++;
+
+
         $tab=rechercher($mot);
         $mot=$tab[rand(0,count($tab)-1)];
 
@@ -107,10 +112,122 @@ function genere(){
         	$phrase=$phrase." ".$mot;
         }
 
-    }while ($mot != "." && $mot != "?" && $mot != "!");
+
+
+            if($i>500){
+            	echo "<br> pb de generation |".$mot."|";
+            }
+
+
+
+
+    }while ($mot != "." && $mot != "?" && $mot != "!" && $mot != "");
 
     return $phrase;
 }
 
+
+
+
+
+
+
+
+/*
+.------------------.
+| rechercherAuteur |
+'------------------'
+Renvoit un tableau contenant tous les mots pécédé par celui passé en paramètre dans le fichier auteur.txt
+*/
+
+
+function rechercherAuteur($mot,$auteur)
+{
+    $tab;
+    $src=file_get_contents("auteur\\".$auteur.".txt");
+    $src=explode(" ", $src);
+
+    $i=0;
+    $j=0;
+
+    if ($mot=="." || $mot=="!" || $mot=="?"){
+        do{
+            $motc=$src[$i];
+
+            if ($motc=="." || $motc=="!" || $motc=="?"){
+                $i=$i+1;
+                $motc=$src[$i];
+                if($motc!="-FIN-"){
+                    $tab[$j]=$motc;
+                    $j=$j+1;
+                }
+            }
+            $i=$i+1;
+        }while ($motc != "-FIN-");
+    }
+    else {
+        do{
+            $motc=$src[$i];
+            if ($motc==$mot){
+                $i=$i+1;
+                $motc=$src[$i];
+
+                if($motc!="-FIN-"){
+                    $tab[$j]=$motc;
+                    $j=$j+1;
+                }
+            }
+            $i=$i+1;
+        }while ($motc != "-FIN-");
+    }
+
+    return $tab;
+}
+
+
+
+
+
+/*
+.--------------.
+| genereAuteur |
+'--------------'
+Renvoit une phrase généré aléatoirement.
+*/
+
+
+function genereAuteur($auteur){
+    $phrase="";
+
+    $i=0;
+
+    $mot=".";
+    do{
+
+        $i++;
+
+
+        $tab=rechercherAuteur($mot,$auteur);
+        $mot=$tab[rand(0,count($tab)-1)];
+
+        if ($mot == "." || $mot == "?" || $mot == "!" || $mot==","){
+            $phrase=$phrase.$mot;
+        }else{
+            $phrase=$phrase." ".$mot;
+        }
+
+
+
+            if($i>500){
+                echo "<br> pb de generation |".$mot."|";
+            }
+
+
+
+
+    }while ($mot != "." && $mot != "?" && $mot != "!" && $mot != "");
+
+    return $phrase;
+}
 
 ?>

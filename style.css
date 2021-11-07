@@ -1,1 +1,215 @@
+body{
+  text-decoration: none;
+  font-size: 1.2em;
+}
 
+a{
+  text-decoration: none;
+  color: #ffd;
+}
+
+nav{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  display: flex;
+  justify-content: space-between;
+
+  color: #ffd;
+  font-size: 1.5em;
+  background-color: #002;
+  
+  padding : 10px;
+  width: 100%;
+}
+
+.onglet{
+  margin: 10px;
+}
+
+section{
+    margin-top: 100px;
+}
+
+h3{
+  margin: 0px;
+  font-size: 1em;
+}
+
+.main{
+  display: flex;
+  min-height: 350px;
+}
+
+.bout{
+  display: flex;
+  justify-content: space-around;
+}
+
+.bouton{
+  display: flex;
+}
+
+.resultat{
+  width: 100%;
+  margin: 10px;
+  
+  padding: 5px;
+  border: 1mm ridge rgba(0,0, 75, .9);
+  border-radius: 5px;
+}
+
+textarea{
+  width: 100%;
+  margin: 10px;
+   
+  padding: 5px;
+  border: 1mm ridge rgba(0,0, 75, .9);
+  border-radius: 5px;
+}
+
+input{
+  margin-left: 15px;
+
+}
+
+
+#shakespeare{
+  height: 300px;
+  width: 300px;
+  border: none;
+  background: none;
+  
+  background-image: url("auteur\\img\\shakespeare.png");
+}body{
+  font-size: 1.2em;
+}
+
+nav{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  display: flex;
+  justify-content: space-between;
+
+  color: #ffd;
+  font-size: 1.5em;
+  background-color: #002;
+  
+  padding : 10px;
+  width: 100%;
+}
+
+.onglet{
+  margin: 10px;
+}
+
+section{
+    margin-top: 100px;
+}
+
+h3{
+  margin: 0px;
+  font-size: 1em;
+}
+
+.main{
+  display: flex;
+  min-height: 350px;
+}
+.bouton{
+  display: flex;
+  margin-top: 10px;
+}
+
+.resultat{
+  width: 100%;
+  margin: 10px;
+  
+  padding: 5px;
+  border: 1mm ridge rgba(0,0, 75, .9);
+  border-radius: 5px;
+}
+
+textarea{
+  width: 100%;
+  margin: 10px;
+   
+  padding: 5px;
+  border: 1mm ridge rgba(0,0, 75, .9);
+  border-radius: 5px;
+}
+
+input{
+  margin-left: 15px;
+
+}
+
+
+.auteur{
+  transition-duration: 1s;
+  
+  margin: 25px;
+  margin-top: 0px;
+  border-radius: 90px; 
+  
+  font-size: 1.1em;
+  padding-top: 275px;
+  
+  height: 300px;
+  width: 300px;
+  border: none;
+  background: none;
+}
+
+.auteur:hover{
+  transition-duration: 0.5s;
+  
+  margin: 25px;
+  margin-top: 0px;
+  border-radius: 90px; 
+  
+  font-size: 1.1em;
+  padding-top: 275px;
+  
+  height: 300px;
+  width: 300px;
+  border: none;
+  background: #ddf;
+}
+
+
+
+#WilliamShakespeare{
+  background-image: url("auteur\\img\\William Shakespeare.png");
+}
+
+#VictorHugo{
+  background-image: url("auteur\\img\\Victor Hugo.png");
+}
+
+#Arthur{
+  background-image: url("auteur\\img\\Arthur.png");
+}
+
+#JeanDeLaFontaine{
+  background-image: url("auteur\\img\\Jean De La Fontaine.png");
+}
+
+#JulienDore{
+  background-image: url("auteur\\img\\Julien Dore.png");
+}
+
+#LoremIpsum{
+  background-image: url("auteur\\img\\Lorem Ipsum.png");
+}
+
+#FanFiction{
+  background-image: url("auteur\\img\\Fan Fiction.png");
+}
+
+
+#github{
+  background-image: url("auteur\\img\\github.png");
+  max-height: 30px;
+}
